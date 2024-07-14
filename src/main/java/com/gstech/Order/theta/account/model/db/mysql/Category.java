@@ -1,11 +1,17 @@
 package com.gstech.Order.theta.account.model.db.mysql;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "category_table")
 public class Category {
+    // Getters and Setters
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,36 +25,4 @@ public class Category {
     @Column(name = "total_order")
     private int totalOrder;
 
-    // Getters and Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Date getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public int getTotalOrder() {
-        return totalOrder;
-    }
-
-    public void setTotalOrder(int totalOrder) {
-        this.totalOrder = totalOrder;
-    }
 }
