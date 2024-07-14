@@ -124,4 +124,12 @@ class OrderServiceImplTest {
         verify(categoryRepository, times(1)).save(category);
     }
 
+    @Test
+    void testGetAllCategories() {
+        when(categoryRepository.findAll()).thenReturn(Arrays.asList(category));
+        List<Category> categories = orderService.getAllCategories();
+        assertFalse(categories.isEmpty());
+        assertEquals(1, categories.size());
+        verify(categoryRepository, times(1)).findAll();
+    }
 }
