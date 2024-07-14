@@ -32,6 +32,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Order> getAllOrders() {
+
+        System.out.println("return all the oder list:");
         return orderRepository.findAll();
     }
 
@@ -54,6 +56,7 @@ public class OrderServiceImpl implements OrderService {
     public void deleteOrder(Long id) {
         Optional<Order> order = orderRepository.findById(id);
         order.ifPresent(orderRepository::delete);
+        System.out.println("branch test");
     }
 
     @Override
