@@ -32,6 +32,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Order> getAllOrders() {
+
+        System.out.println("return all the oder list:");
         return orderRepository.findAll();
     }
 
